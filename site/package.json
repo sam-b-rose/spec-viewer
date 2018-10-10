@@ -1,0 +1,85 @@
+{
+  "name": "spec-viewer",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build && node build.js && cp -r ../specs dist/specs",
+    "lint": "vue-cli-service lint",
+    "gh-pages": "push-dir --dir=dist --branch=gh-pages --cleanup",
+    "deploy": "npm run build && npm run gh-pages"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.2",
+    "@fortawesome/free-solid-svg-icons": "^5.2.0",
+    "@fortawesome/vue-fontawesome": "^0.1.1",
+    "axios": "^0.18.0",
+    "date-fns": "^1.29.0",
+    "element-ui": "^2.4.5",
+    "fuzzysearch": "^1.0.3",
+    "lodash": "^4.17.10",
+    "vue": "^2.5.16",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0-rc.10",
+    "@vue/cli-plugin-eslint": "^3.0.0-rc.10",
+    "@vue/cli-service": "^3.0.0-rc.10",
+    "@vue/eslint-config-prettier": "^3.0.0-rc.10",
+    "babel-plugin-component": "^1.1.1",
+    "directory-tree": "^2.1.0",
+    "gitlog": "^3.1.2",
+    "glob": "^7.1.2",
+    "node-sass": "^4.9.0",
+    "push-dir": "^0.4.1",
+    "sass-loader": "^7.0.1",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/prettier"
+    ],
+    "rules": {
+      "vue/attribute-hyphenation": [
+        "error",
+        "always"
+      ],
+      "vue/html-end-tags": "error",
+      "vue/html-indent": [
+        "error",
+        2
+      ],
+      "vue/html-self-closing": "error",
+      "vue/require-default-prop": "error",
+      "vue/require-prop-types": "error",
+      "vue/attributes-order": "error",
+      "vue/html-quotes": [
+        "error",
+        "double"
+      ],
+      "vue/order-in-components": "error"
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
